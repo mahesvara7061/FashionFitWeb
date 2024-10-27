@@ -1,0 +1,42 @@
+[
+    {
+        "ReviewId": "001",
+        "ProductId": "101",
+        "UserId": "U001",
+        "Rating": 5,
+        "Review": "Fantastic product! Highly recommend it.",
+        "CreatedTime": "2024-12-14T10:00:00+07:00"
+    },
+    {
+        "ReviewId": "002",
+        "ProductId": "101",
+        "UserId": "U002",
+        "Rating": 4,
+        "Review": "Very good quality, but a bit pricey.",
+        "CreatedTime": "2024-12-14T11:00:00+07:00"
+    },
+    {
+        "ReviewId": "003",
+        "ProductId": "102",
+        "UserId": "U003",
+        "Rating": 3,
+        "Review": "Average product, not worth the price.",
+        "CreatedTime": "2024-12-14T12:00:00+07:00"
+    },
+    {
+        "ReviewId": "004",
+        "ProductId": "103",
+        "UserId": "U004",
+        "Rating": 2,
+        "Review": "Poor quality, would not recommend.",
+        "CreatedTime": "2024-12-14T13:00:00+07:00"
+    },
+    {
+        "ReviewId": "005",
+        "ProductId": "102",
+        "UserId": "U005",
+        "Rating": 5,
+        "Review": "Excellent value for money, exceeded expectations.",
+        "CreatedTime": "2024-12-14T14:00:00+07:00"
+    }
+]

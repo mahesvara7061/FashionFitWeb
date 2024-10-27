@@ -1,0 +1,50 @@
+[
+    {
+        "UserId": "001",
+        "Username": "johndoe",
+        "Password": "hashed_password1",
+        "Email": "johndoe@example.com",
+        "FullName": "John Doe",
+        "Address": "123 Nguyen Hue, District 1, Ho Chi Minh City, Vietnam",
+        "DateOfBirth": "1990-01-15",
+        "PhoneNumber": "0901234567",
+        "CreatedTime": "2024-12-14T12:00:00",
+        "UpdatedTime": "2024-12-14T12:00:00"
+    },
+    {
+        "UserId": "002",
+        "Username": "janedoe",
+        "Password": "hashed_password2",
+        "Email": "janedoe@example.com",
+        "FullName": "Jane Doe",
+        "Address": "456 Le Duan, Da Nang City, Vietnam",
+        "DateOfBirth": "1995-05-20",
+        "PhoneNumber": "0938765432",
+        "CreatedTime": "2024-12-14T12:00:00",
+        "UpdatedTime": "2024-12-14T12:00:00"
+    },
+    {
+        "UserId": "003",
+        "Username": "vietnguyen",
+        "Password": "hashed_password3",
+        "Email": "vietnguyen@example.com",
+        "FullName": "Viet Nguyen",
+        "Address": "789 Hai Ba Trung, Hanoi, Vietnam",
+        "DateOfBirth": "1988-03-10",
+        "PhoneNumber": "0912233445",
+        "CreatedTime": "2024-12-14T12:00:00",
+        "UpdatedTime": "2024-12-14T12:00:00"
+    },
+    {
+        "UserId": "004",
+        "Username": "minhtran",
+        "Password": "hashed_password4",
+        "Email": "minhtran@example.com",
+        "FullName": "Minh Tran",
+        "Address": "123 Tran Hung Dao, District 5, Ho Chi Minh City, Vietnam",
+        "DateOfBirth": "2000-08-25",
+        "PhoneNumber": "0987654321",
+        "CreatedTime": "2024-12-14T12:00:00",
+        "UpdatedTime": "2024-12-14T12:00:00"
+    }
+]
