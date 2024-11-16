@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Bodoni+Moda:opsz,wght@6..96,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+a.active hr {
+    display: block;
+    @apply w-full bg-blue-500 h-0.5;
+}
+
+.nav-active hr {
+    width: 50% !important;
+    transition: all 0.3s;
+}
+
+* {
+    font-family: 'Outfit';
+}
+
+.prata-regular {
+    font-family: "Prata", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bodoni-regular {
+    font-family: "Bodoni Moda", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+@media (max-width: 640px) {
+    a.active {
+        background-color: black;
+        color: white;
+
+    }
+}
