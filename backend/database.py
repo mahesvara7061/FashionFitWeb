@@ -16,5 +16,5 @@ def close_db(exception):
     Đóng kết nối MongoDB khi kết thúc ứng dụng.
     """
     db_client = g.pop("client", None)
-    if db_client is not None:
-        db_client.close()
+    if db_client is not None: 
+        db_client.close()          
