@@ -10,7 +10,7 @@ def add_coupon():
     API để thêm coupon mới (hỗ trợ nhiều loại coupon).
     """
     try:
-        db = get_db()
+        db = get_db() 
         data = request.json
 
         # Kiểm tra trường bắt buộc chung

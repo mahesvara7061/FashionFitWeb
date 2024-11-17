@@ -263,3 +263,4 @@ def apply_coupon():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# good, tốt nhất trong các api mà m đã viết, cần thêm xử lý lỗi cho các trường hợp khác như user không tồn tại
