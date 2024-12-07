@@ -31,3 +31,5 @@ const CartTotal = ({price}) => {
 }
 
 export default CartTotal
+
+//
