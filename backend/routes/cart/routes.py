@@ -13,12 +13,14 @@ def add_product():
     """
     try:
         db = get_db()
+        
         data = request.json
 
         # Lấy dữ liệu từ request
         user_id = str(data.get("userId"))
         product_id = str(data.get("productId"))
-        quantity = data.get("quantity", 1)
+        # Get quantity
+        quantity = data.get("quantity", 1) 
 
         # Validate input
         if not user_id:
