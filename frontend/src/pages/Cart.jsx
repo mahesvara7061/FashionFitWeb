@@ -144,3 +144,6 @@ const Cart = () => {
 };
 
 export default Cart;
+
+
+//the end
