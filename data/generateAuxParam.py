@@ -61,7 +61,7 @@ for idx, product in enumerate(products_data, start=1):
         "Gender": product.get("Gender", "Unknown"),
         "Colour": product.get("Colour", "Unknown"),
         "Usage": product.get("Usage", "Unknown"),
-        "Sizes": sizes,
+        "Sizes": sizes, 
         "PriceUSD": product.get("PriceUSD", 0.0),
         "PriceVND": product.get("PriceVND", 0.0),
         "Stock": stock,      
