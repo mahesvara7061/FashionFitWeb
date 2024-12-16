@@ -81,12 +81,12 @@ exchange_rate = get_usd_to_vnd_exchange_rate()
 price_stack = deque(maxlen=5)
 
 # Cập nhật thông tin sản phẩm
-for product in tqdm(products, desc="Đang tìm giá..."):
-    product_name = product.get("ProductTitle", "")
+for product in tqdm(products, desc="Đang tìm giá..."):  
+    product_name = product.get("ProductTitle", "")   
     print(f"Tìm giá cho sản phẩm: {product_name}")
     price_usd = get_first_product_amazon(product_name)
     if price_usd:
-        price_vnd = price_usd * exchange_rate
+        price_vnd = price_usd * exchange_rate   
         product["PriceUSD"] = price_usd
         product["PriceVND"] = round(price_vnd, 0)
         price_stack.append(product["PriceVND"])  # Thêm giá vào stack
