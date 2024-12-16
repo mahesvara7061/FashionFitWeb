@@ -29,3 +29,6 @@ def capture_order_route():
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+# tốt nhưng hơi nhập nhằng, có vẻ là do api của paypal update version mới, nhớ báo lại cho frontend để tạo url cho các trường hợp 
