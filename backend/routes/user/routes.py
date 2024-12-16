@@ -146,3 +146,5 @@ def get_user_profile(user_id):
 
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+# Các API khác có thể thêm: lấy danh sách user, lấy thông tin user theo username
