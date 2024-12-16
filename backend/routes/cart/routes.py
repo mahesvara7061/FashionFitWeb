@@ -12,7 +12,7 @@ def add_product():
     Hiển thị giá của từng sản phẩm và tính tổng số tiền trong giỏ hàng.
     """
     try:
-        db = get_db()
+        db = get_db() # Get db connection
         
         data = request.json
 

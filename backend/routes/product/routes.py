@@ -6,7 +6,7 @@ import pytz
 product_bp = Blueprint("product", __name__, url_prefix='/api/product')
 
 def get_current_time():
-    tz = pytz.timezone('Asia/Bangkok')
+    tz = pytz.timezone('Asia/Bangkok') # Set timezone to Asia/Bangkok
     return datetime.now(tz).isoformat()
 
 @product_bp.route("/search", methods=["GET"])
