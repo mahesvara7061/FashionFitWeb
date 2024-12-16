@@ -12,7 +12,7 @@ size_mapping = {
     "Tshirts": ["XS", "S", "M", "L", "XL"],
     "Shoes": ["36", "37", "38", "39", "40", "41", "42", "43", "44"],
     "Pants": ["XS", "S", "M", "L", "XL", "XXL"],
-    "Dresses": ["XS", "S", "M", "L", "XL"],
+    "Dresses": ["XS", "S", "M", "L", "XL"],    
     "Accessories": []  # No size applicable
 }
 
@@ -64,7 +64,7 @@ for idx, product in enumerate(products_data, start=1):
         "Sizes": sizes,
         "PriceUSD": product.get("PriceUSD", 0.0),
         "PriceVND": product.get("PriceVND", 0.0),
-        "Stock": stock,
+        "Stock": stock,      
         "Sales": sales,
         "Image": product.get("Image", f"{product_id}.jpg"),
         "ImageURL": product.get("ImageURL"),  # Keep original URL
@@ -84,4 +84,4 @@ for idx, product in enumerate(products_data, start=1):
 with open("updated_products.json", "w") as outfile:
     json.dump(products, outfile, indent=4)
 
-print("Product data updated and saved to updated_products.json.")
+print("Product data updated and saved to updated_products.json.")   
