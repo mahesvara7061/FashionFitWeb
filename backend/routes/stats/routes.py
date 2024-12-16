@@ -66,3 +66,5 @@ def calculate_revenue():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+# thiếu nhiều nhưng nếu chỉ cần có thêm tính năng cho manager thì chấp nhận được
