@@ -123,9 +123,10 @@ def create_order_from_cart():
             }
         }
         
-        order_created = create_order(order_data)["order"]
-        label = order_created["label"]
-        estimated_deliver_time = order_created["estimated_deliver_time"]
+        order_created = create_order(order_data)
+        order_new = order_created["order"]
+        label = order_new["label"]
+        estimated_deliver_time = order_new["estimated_deliver_time"]
         if not label:
             return jsonify({"error": "Cannot create order to GHTK"}), 500
         
