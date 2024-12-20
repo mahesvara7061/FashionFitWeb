@@ -368,3 +368,4 @@ def get_user_orders(user_id):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
+# thiếu chức năng update order, xóa order, xem chi tiết order, ...
