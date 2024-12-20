@@ -121,6 +121,8 @@ def create_order_from_cart():
                 "value": float(total_vnd),
                 "booking_id": "123"
             }
+            # hơi khác schema nhưng có thể sửa vì có vẻ ghtk bắt buộc phải có province và district
+            # nhớ sửa lại database schema để lưu thông tin province và district và báo các route khác
         }
         
         order_created = create_order(order_data)
