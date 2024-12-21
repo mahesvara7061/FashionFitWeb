@@ -349,5 +349,20 @@ def calculate_cart_weight(user_id):
     result = list(db.carts.aggregate(pipeline))
     return result[0]["totalWeight"] if result else 0
 
+@order_bp.route('/view_order/<user_id>', methods=['GET'])
+def get_user_orders(user_id):
+    """
+    Lấy danh sách các đơn hàng theo user_id.
+    """
+    try:
+        db = get_db()
 
+        # Tìm đơn hàng của user
+        order = list(db.orders.findone({"userId": str(user_id)}, {"_id": 0}))
+        if not order:
+            return jsonify({"error": "No orders found"}), 404
+
+        return jsonify({order}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
     
