@@ -52,3 +52,5 @@ def remove_manager():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+    # ổn dù hơi sơ sài nhưng đúng ý tưởng, nên thêm các trường hợp xử lý lỗi khác như user không tồn tại, hoặc không phải manager, hoặc không có quyền xóa manager, ...
