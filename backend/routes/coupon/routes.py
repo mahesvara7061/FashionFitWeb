@@ -4,7 +4,7 @@ from datetime import datetime
 
 coupon_bp = Blueprint('coupon', __name__, url_prefix='/api/coupons')
 
-@coupon_bp.route('/add', methods=['POST'])
+@coupon_bp.route('/add', methods=['POST']) # Thêm coupon mới
 def add_coupon():
     """
     API để thêm coupon mới (hỗ trợ nhiều loại coupon).
@@ -80,7 +80,7 @@ def add_coupon():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@coupon_bp.route('/<coupon_id>', methods=['DELETE'])
+@coupon_bp.route('/<coupon_id>', methods=['DELETE']) # Xóa coupon
 def delete_coupon(coupon_id):
     """
     API để xóa coupon theo couponId.

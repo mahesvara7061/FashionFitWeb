@@ -2,10 +2,10 @@ from flask import Blueprint, request, jsonify
 from datetime import datetime
 from database import get_db, exchange_rate
 
-cart_bp = Blueprint('cart', __name__, url_prefix='/api/cart')
+cart_bp = Blueprint('cart', __name__, url_prefix='/api/cart') # Create a Blueprint object
 
 # Add product to cart
-@cart_bp.route("/add", methods=["POST"])
+@cart_bp.route("/add", methods=["POST"]) # Define a route for adding a product to the cart
 def add_product():
     """
     API thêm sản phẩm vào giỏ hàng.

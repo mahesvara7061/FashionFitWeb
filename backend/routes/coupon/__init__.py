@@ -1,1 +1,1 @@
-from .routes import coupon_bp
+from .routes import coupon_bp # noqa

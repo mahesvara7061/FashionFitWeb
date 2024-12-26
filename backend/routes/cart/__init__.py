@@ -1,1 +1,1 @@
-from .routes import cart_bp
+from .routes import cart_bp # noqa

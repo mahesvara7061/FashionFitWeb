@@ -8,8 +8,8 @@ def get_db(db_name="FashionFit"):
     Kết nối với MongoDB và trả về đối tượng database.
     """
     if "client" not in g:
-        g.client = MongoClient("mongodb+srv://mahesvara:2004@products.i9zzz.mongodb.net/")
-    return g.client[db_name]
+        g.client = MongoClient("mongodb+srv://mahesvara:2004@products.i9zzz.mongodb.net/") # Kết nối đến MongoDB
+    return g.client[db_name] 
 
 def close_db(exception):
     """
