@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Try On</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .image-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="url"] {
+      margin-top: 10px;
+      width: 100%;
+      padding: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #resultImage {
+      margin-top: 20px;
+      display: none;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <form class="container" id="tryOnForm">
+    <div class="image-section">
+      <h3>Product Image</h3>
+      <img id="productImage" src="" alt="Product Image Not Available" style="margin-bottom: 10px;">
+    </div>
+    <div class="image-section">
+      <h3>Enter Your Image URL</h3>
+      <input type="url" id="userImageUrl" placeholder="Enter your image URL" required>
+      <button type="submit" id="tryOnButton">Try On</button>
+    </div>
+  </form>
+
+  <img id="resultImage" alt="Try-On Result">
+
+  <script>
+    const REPLICATE_API_TOKEN = 'r8_ZnryMGI3XN7rUrrkjdXuFPApkQXji5V017h0j'; // Replace with your actual token
+
+    // Get product image URL from query parameters
+    const params = new URLSearchParams(window.location.search);
+    const productImageUrl = params.get('productImage');
+
+    const productImageElement = document.getElementById('productImage');
+    const resultImageElement = document.getElementById('resultImage');
+
+    // Set product image dynamically
+    if (productImageUrl) {
+      productImageElement.src = decodeURIComponent(productImageUrl);
+    } else {
+      alert('Product image URL is missing.');
+    }
+
+    // Handle form submission for Try On
+    document.getElementById('tryOnForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const userImageUrlInput = document.getElementById('userImageUrl');
+      const userImageUrl = userImageUrlInput.value;
+
+      if (!userImageUrl) {
+        alert('Please provide your image URL.');
+        return;
+      }
+
+      try {
+        // Prepare API request for try-on using product URL and user image URL
+        const tryOnResponse = await fetch('https://api.replicate.com/v1/predictions', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${REPLICATE_API_TOKEN}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            version: 'c871bb9b046607b680449ecbae55fd8c6d945e0a1948644bf2361b3d021d3ff4',
+            input: {
+              garm_img: productImageUrl,
+              human_img: userImageUrl,
+              garment_des: 'Try-On Garment'
+            }
+          })
+        });
+
+        const result = await tryOnResponse.json();
+        if (result && result.output) {
+          resultImageElement.src = result.output;
+          resultImageElement.style.display = 'block';
+        } else {
+          alert('Failed to generate try-on result.');
+        }
+      } catch (error) {
+        console.error('Error during try-on:', error);
+        alert('Failed to process try-on. Please try again later.');
+      }
+    });
+  </script>
+</body>
+</html>
