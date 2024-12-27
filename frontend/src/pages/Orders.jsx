@@ -10,7 +10,7 @@ const Orders = () => {
   const [orders, setOrders] = useState([]);
   const userId = JSON.parse(localStorage.getItem('userId'));
   useEffect(() => {
-    axios.get(`http://127.0.0.1:5000/api/cart/${userId}`)
+    axios.get(`http://127.0.0.1:5000/api/order/view_order/${userId}`)
         .then((res) => {
           setOrders (res.data.items);
         })
